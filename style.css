@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -9,17 +11,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(139, 42, 42);
+    background: #474f85;
+    font-family: 'Libre Baskerville', serif;
 }
 
 .principal {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    background-color: gray;
+    background: #fff;
     padding: 2rem;
     width: 70rem;
     height: 30rem;
+    border-radius: 2rem;
 }
 
 @media screen and (max-width: 780px) {
@@ -40,7 +43,7 @@ body {
     position: relative;
 }
 
-.principal-clock .number{
+.principal-clock .number {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -48,20 +51,55 @@ body {
     transform: rotate(var(--rotacion));
 }
 
-.principal-clock .number1 {--rotacion: 30deg; }
-.principal-clock .number2 {--rotacion: 60deg; }
-.principal-clock .number3 {--rotacion: 90deg; }
-.principal-clock .number4 {--rotacion: 120deg; }
-.principal-clock .number5 {--rotacion: 150deg; }
-.principal-clock .number6 {--rotacion: 180deg; }
-.principal-clock .number7 {--rotacion: 210deg; }
-.principal-clock .number8 {--rotacion: 240deg; }
-.principal-clock .number9 {--rotacion: 270deg; }
-.principal-clock .number10 {--rotacion: 300deg; }
-.principal-clock .number11 {--rotacion: 330deg; }
-.principal-clock .number12 {--rotacion: 360deg; }
+.principal-clock .number1 {
+    --rotacion: 30deg;
+}
 
-.principal-clock .hand{
+.principal-clock .number2 {
+    --rotacion: 60deg;
+}
+
+.principal-clock .number3 {
+    --rotacion: 90deg;
+}
+
+.principal-clock .number4 {
+    --rotacion: 120deg;
+}
+
+.principal-clock .number5 {
+    --rotacion: 150deg;
+}
+
+.principal-clock .number6 {
+    --rotacion: 180deg;
+}
+
+.principal-clock .number7 {
+    --rotacion: 210deg;
+}
+
+.principal-clock .number8 {
+    --rotacion: 240deg;
+}
+
+.principal-clock .number9 {
+    --rotacion: 270deg;
+}
+
+.principal-clock .number10 {
+    --rotacion: 300deg;
+}
+
+.principal-clock .number11 {
+    --rotacion: 330deg;
+}
+
+.principal-clock .number12 {
+    --rotacion: 360deg;
+}
+
+.principal-clock .hand {
     --rotacion: 0;
     position: absolute;
     bottom: 50%;
@@ -72,7 +110,7 @@ body {
     transform: translate(-50%) rotate(calc(var(--rotacion)*1deg));
 }
 
-.principal-clock::after{
+.principal-clock::after {
     content: '';
     position: absolute;
     background-color: black;
@@ -85,22 +123,44 @@ body {
     border-radius: 100%;
 }
 
-.principal-clock .principal-clock-sec{
+.principal-clock .principal-clock-sec {
     height: 38%;
     width: 0.2rem;
     background-color: rgb(196, 13, 13);
 }
 
-.principal-clock .principal-clock-min{
+.principal-clock .principal-clock-min {
     height: 35%;
     width: 0.4rem;
     background-color: rgb(85, 70, 70);
 }
 
-.principal-clock .principal-clock-hours{
+.principal-clock .principal-clock-hours {
     height: 28%;
     width: 0.55rem;
     background-color: black;
 }
 
 /*fecha*/
+.principal-date {
+    display:grid;
+    grid-template-rows: 2fr 1.4fr;
+    gap: 2rem;
+}
+.principal-date-temperature{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.date-actual {
+    font-size: 3.5rem;
+    text-align: center;
+    width: 80%;
+}
+
+.search{
+    background-color: #fff;
+    width: 1.5rem;
+    border: none;
+}

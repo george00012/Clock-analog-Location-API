@@ -29,16 +29,26 @@
       </div>
 
       <div class="principal-date">
-        <p class="principal-date-location-temperature-place">place</p>
-        <div class="princial-date-content">
-          <div class="principal-date-day"></div>
-          <div class="principal-date-month"></div>
-          <div class="principal-date-year"></div>
+      
+        <div class="principal-date-temperature">
+          <div class="principal-search">
+            <input type="text" name="city" id="search" placeholder="Ingrese el nombre de la ciudad">
+          </div>
+          <div class="principal-weather">
+            <div class="wheather-icon">
+            </div>
+            <h1 class="city"></h1>
+            <h2 class="temperature"></h2>
+            
+            <div class="error"></div>
+          </div>
         </div>
-        <p class="principal-date-location-temperature">temperature</p>
+
+        <p class="date-actual"></p>
       </div>
     </main>
-
+    
     <script src="app.js"></script>
+  </head>
   </body>
 </html>
