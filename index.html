@@ -1,54 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clock Analog and date</title>
-    <link rel="shortcut icon" href="../0/img/reloj.png" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <main class="principal">
-      <div class="principal-clock">
-        <div class="hand principal-clock-hours"></div>
-        <div class="hand principal-clock-min"></div>
-        <div class="hand principal-clock-sec"></div>
-        <div class="number number1"></div>
-        <div class="number number2"></div>
-        <div class="number number3"></div>
-        <div class="number number4"></div>
-        <div class="number number5"></div>
-        <div class="number number6"></div>
-        <div class="number number7"></div>
-        <div class="number number8"></div>
-        <div class="number number9"></div>
-        <div class="number number10"></div>
-        <div class="number number11"></div>
-        <div class="number number12"></div>
-      </div>
 
-      <div class="principal-date">
-      
-        <div class="principal-date-temperature">
-          <div class="principal-search">
-            <input type="text" name="city" id="search" placeholder="Ingrese el nombre de la ciudad">
-          </div>
-          <div class="principal-weather">
-            <div class="wheather-icon">
-            </div>
-            <h1 class="city"></h1>
-            <h2 class="temperature"></h2>
-            
-            <div class="error"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clock Analog and date</title>
+  <link rel="shortcut icon" href="../0/img/reloj.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="principal">
+    <div class="principal-clock">
+      <div class="hand principal-clock-hours"></div>
+      <div class="hand principal-clock-min"></div>
+      <div class="hand principal-clock-sec"></div>
+      <div class="number number1"></div>
+      <div class="number number2"></div>
+      <div class="number number3"></div>
+      <div class="number number4"></div>
+      <div class="number number5"></div>
+      <div class="number number6"></div>
+      <div class="number number7"></div>
+      <div class="number number8"></div>
+      <div class="number number9"></div>
+      <div class="number number10"></div>
+      <div class="number number11"></div>
+      <div class="number number12"></div>
+    </div>
+
+    <div class="principal-date-temperature">
+      <div class="principal-search">
+        <input type="text" name="city" id="principal-search-input" placeholder="Ingrese el nombre de la ciudad">
+      </div>
+      <div class="principal-weather">
+
+        <div class="principal-weather-localizacion">
+          <h2 class="principal-weather-localizacion-city">Valencia</h2>
+          <h2 class="principal-weather-localizacion-country">Es</h2>
+        </div>
+
+        <h3 class="principal-date-actual"></h3>
+
+        <div class="principal-weather-tiempo">
+          <h3 class="principal-weather-temperature">20°C</h3>
+          <div class="principal-weather-icon">
+            <img class="principal-weather-icon-img" src="../0/img/foggy_FILL0_4.png" alt="">
           </div>
         </div>
 
-        <p class="date-actual"></p>
+        <div class="principal-date-error"></div>
       </div>
-    </main>
-    
-    <script src="app.js"></script>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
   </head>
-  </body>
+</body>
+
 </html>

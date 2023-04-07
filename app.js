@@ -40,13 +40,12 @@ const diaActual = fechaActual.getDate();
 const anioActual = fechaActual.getFullYear();
 
 let fechaDia = diaSemanaActual + ", " + diaActual + " de " + mesActual + " de " + anioActual;
-document.querySelector(".date-actual").textContent = fechaDia;
+document.querySelector(".principal-date-actual").textContent = fechaDia;
 
 
-/*localizacion*/
-let imagen = document.querySelector(".img");
+/*LOCALIZACION*/
 
-let searchValor = document.getElementById("search");
+let searchValor = document.getElementById("principal-search-input");
 searchValor.addEventListener('keypress', searchFunc);
 
 function searchFunc(e) {
@@ -61,21 +60,36 @@ function getData(value) {
     .then(function (response) {
       return response.json();
     })
-    .then(function (whether) {
-      document.querySelector(".city").innerHTML = whether.name;
+    .then(function (weather) {
+      document.querySelector(".principal-weather-localizacion-city").innerHTML = weather.name;
+      document.querySelector(".principal-weather-localizacion-country").innerHTML = weather.sys.country;
 
-      const temperatura = document.querySelector(".temperature");
-      const kelvin = whether.main.temp;
+      const iconElement = document.querySelector(".principal-weather-icon");
+      const temperatura = document.querySelector(".principal-weather-temperature");
+      const kelvin = weather.main.temp;
       const celcius = kelvin - 273.15;
-      temperatura.innerHTML= `${celcius.toFixed(0)}°C`;
+      temperatura.innerHTML = `${celcius.toFixed(0)}°C`;
 
-      searchValor.value="";
-      document.querySelector(".error").innerHTML="";
+      if (celcius > 30) {
+        iconElement.innerHTML = '<img src="../0/img/sunny_FILL0_1.png">';
+      } else if (celcius > 20) {
+        iconElement.innerHTML = '<img src="../0/img/light_mode_2.png">';
+      } else if (celcius > 10) {
+        iconElement.innerHTML = '<img src="../0/img/cloud_FILL0_3.png">';
+      } else if (celcius > 0) {
+        iconElement.innerHTML = '<img src="../0/img/foggy_FILL0_4.png">';
+      } else {
+        iconElement.innerHTML = '<img src="../0/img/severe_cold_5.png" >';
+      }
+
+      searchValor.value = "";
+      document.querySelector(".principal-date-error").innerHTML = "";
     })
     .catch(function (error) {
-      document.querySelector(".error").innerHTML= `Se ha producido en el nombre de la ciudad: ${error}. Pon una ciudad correctamente`;
-      document.querySelector(".city").innerHTML ="";
-      searchValor.value="";
+      document.querySelector(".principal-date-error").innerHTML =
+        `Se ha producido en el nombre de la ciudad: ${error}.Pon una ciudad correctamente`;
+      document.querySelector(".principal-weather-localizacion-city").innerHTML = "";
+      searchValor.value = "";
     });
 }
 
