@@ -56,7 +56,7 @@ function searchFunc(e) {
 
 function getData(value) {
   fetch('https://api.openweathermap.org/data/2.5/weather?q=' + value +
-    '&appid=aa943b0001548ea2eda45b798f4ddbab')
+    '&appid=apikey')
     .then(function (response) {
       return response.json();
     })
