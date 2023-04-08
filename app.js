@@ -1,4 +1,4 @@
-
+let fecha = document.querySelector(".principal-wheather-date-actual");
 /*RELOJ*/
 const horaManecilla = document.querySelector(".principal-clock-hours");
 const minutoManecilla = document.querySelector(".principal-clock-min");
@@ -40,12 +40,12 @@ const diaActual = fechaActual.getDate();
 const anioActual = fechaActual.getFullYear();
 
 let fechaDia = diaSemanaActual + ", " + diaActual + " de " + mesActual + " de " + anioActual;
-document.querySelector(".principal-date-actual").textContent = fechaDia;
+fecha.textContent = fechaDia;
 
 
 /*LOCALIZACION*/
 
-let searchValor = document.getElementById("principal-search-input");
+let searchValor = document.getElementById("principal-wheather-search");
 searchValor.addEventListener('keypress', searchFunc);
 
 function searchFunc(e) {
@@ -85,10 +85,9 @@ function getData(value) {
       searchValor.value = "";
       document.querySelector(".principal-date-error").innerHTML = "";
     })
-    .catch(function (error) {
+    .catch(function () {
       document.querySelector(".principal-date-error").innerHTML =
-        `Se ha producido en el nombre de la ciudad: ${error}.Pon una ciudad correctamente`;
-      document.querySelector(".principal-weather-localizacion-city").innerHTML = "";
+      `Se ha producido un error con el nombre de la ciudad, pon el nombre correctamente`;
       searchValor.value = "";
     });
 }
